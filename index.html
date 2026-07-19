@@ -20,6 +20,7 @@
             --text-main: #F8FAFC;
             --text-muted: #94A3B8;
             --nav-bg: rgba(11, 15, 25, 0.8);
+            --kofi-color: #FF5E5B;
         }
 
         * {
@@ -158,12 +159,14 @@
         }
 
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 0.8rem 2rem;
             border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
             cursor: pointer;
         }
 
@@ -189,12 +192,21 @@
             border-color: rgba(255, 255, 255, 0.2);
         }
 
+        .btn-kofi {
+            background-color: var(--kofi-color);
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(255, 94, 91, 0.2);
+        }
+
+        .btn-kofi:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(255, 94, 91, 0.4);
+            background-color: #ff4a47;
+        }
+
         .btn-sm {
             padding: 0.5rem 1.2rem;
             font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
         /* Chi Sono */
@@ -333,6 +345,23 @@
             color: #fff;
         }
 
+        /* Support Section */
+        .support-box {
+            background: rgba(255, 94, 91, 0.03);
+            border: 1px dashed rgba(255, 94, 91, 0.3);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .support-box p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -370,9 +399,9 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.8rem; }
             .nav-links { display: none; }
-            .contact-card { padding: 2rem 1.5rem; }
+            .contact-card, .support-box { padding: 2rem 1.5rem; }
             .cta-buttons { flex-direction: column; width: 100%; }
-            .btn { text-align: center; }
+            .btn { text-align: center; justify-content: center; }
         }
     </style>
 </head>
@@ -386,6 +415,7 @@
                 <li><a href="#chi-sono">Chi Sono</a></li>
                 <li><a href="#progetti">Progetti</a></li>
                 <li><a href="#contatti">Contatti</a></li>
+                <li><a href="#sostienimi">Sostienimi</a></li>
             </ul>
         </nav>
     </header>
@@ -470,6 +500,17 @@
                     <i class="fa-brands fa-github"></i>
                 </a>
             </div>
+        </div>
+    </section>
+
+    <!-- SOSTIENIMI SECTION -->
+    <section id="sostienimi">
+        <h2 class="section-title">Vuoi Sostenermi?</h2>
+        <div class="support-box">
+            <p>Se apprezzi il mio lavoro e vuoi supportare i miei progetti di sviluppo gratuiti, puoi offrirmi un caffè per sostenere i costi tecnologici e di gestione delle piattaforme.</p>
+            <a href="https://ko-fi.com/manasalam" target="_blank" class="btn btn-kofi">
+                <i class="fa-solid fa-cup-straw-juice"></i> Effettua una donazione su Ko-fi
+            </a>
         </div>
     </section>
 
