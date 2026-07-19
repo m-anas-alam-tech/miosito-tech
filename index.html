@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome per le icone social -->
+    <!-- FontAwesome per le icone social e icone generiche -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -164,6 +164,7 @@
             font-weight: 600;
             text-decoration: none;
             transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
         }
 
         .btn-primary {
@@ -188,6 +189,14 @@
             border-color: rgba(255, 255, 255, 0.2);
         }
 
+        .btn-sm {
+            padding: 0.5rem 1.2rem;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         /* Chi Sono */
         .about-content {
             display: grid;
@@ -209,6 +218,15 @@
             margin-top: 1.5rem;
         }
 
+        .highlight-box code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            color: var(--accent-color);
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
         /* Progetti */
         .projects-grid {
             display: grid;
@@ -222,6 +240,9 @@
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .project-card:hover {
@@ -317,9 +338,27 @@
             text-align: center;
             padding: 3rem 2rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             margin-top: 4rem;
+        }
+
+        footer .copyright {
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.3rem;
+        }
+
+        footer .design-by {
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        footer .design-by span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
         }
 
         /* Animazioni & Responsive */
@@ -330,7 +369,7 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.8rem; }
-            .nav-links { display: none; } /* Semplificato per spazio */
+            .nav-links { display: none; }
             .contact-card { padding: 2rem 1.5rem; }
             .cta-buttons { flex-direction: column; width: 100%; }
             .btn { text-align: center; }
@@ -353,11 +392,11 @@
 
     <!-- HERO SECTION -->
     <section class="hero" id="home">
-        <div class="hero-badge">Siti Web Gratis & Spazio Tech</div>
+        <div class="hero-badge">Siti Web Gratis con Dominio Personale</div>
         <h1>Ciao, sono <br><span>Mohammad Anas Alam</span></h1>
-        <p>Un ragazzo italiano appassionato di sviluppo, programmazione e tecnologia. Creo siti web moderni, veloci e su misura, completamente gratis.</p>
+        <p>Un ragazzo italiano appassionato di sviluppo e tecnologia. Creo siti web moderni completamente gratis, pronti per essere pubblicati sul dominio m-anas-alam-tech.github.io.</p>
         <div class="cta-buttons">
-            <a href="#contatti" class="btn btn-primary">Richiedi un Sito Gratis</a>
+            <a href="#contatti" class="btn btn-primary">Richiedi il Tuo Sito</a>
             <a href="#progetti" class="btn btn-secondary">Guarda i Lavori</a>
         </div>
     </section>
@@ -367,11 +406,11 @@
         <h2 class="section-title">Chi Sono</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>Sono uno sviluppatore e appassionato tech con base in Italia. La tecnologia per me non è solo codice, ma uno strumento per dare forma alle idee delle persone e delle attività locali.</p>
+                <p>Sono uno sviluppatore e appassionato tech con base in Italia. La tecnologia per me è uno strumento per dare forma alle idee di attività commerciali, brand personali e progetti innovativi.</p>
                 
                 <div class="highlight-box">
-                    <strong>Perché lo faccio gratis?</strong><br>
-                    Sto espandendo attivamente il mio portfolio e affinando le mie competenze. Questo significa che puoi ottenere un sito web professionale, curato e al passo con i tempi senza spendere un centesimo per lo sviluppo.
+                    <strong>Come funziona il servizio gratuito?</strong><br>
+                    Creo e sviluppo la tua piattaforma a costo zero. Il tuo nuovo sito web sarà reso pubblico in rete utilizzando l'affidabile sottodominio gratuito: <code>https://m-anas-alam-tech.github.io/nome-tuo-sito/</code>.
                 </div>
             </div>
         </div>
@@ -382,21 +421,24 @@
         <h2 class="section-title">Progetti Recenti</h2>
         <div class="projects-grid">
             
-            <!-- Progetto 1 -->
+            <!-- Progetto 1: Rongdhonu Fashion -->
             <div class="project-card">
                 <div class="project-info">
                     <span class="project-tag">E-Commerce / Retail</span>
                     <h3>RONGDHONU FASHION & BABY SHOP</h3>
-                    <p>Una piattaforma web ottimizzata per l'esposizione e la vendita di abbigliamento e prodotti per l'infanzia. Design pulito, navigazione intuitiva e performance elevate.</p>
+                    <p style="margin-bottom: 1.2rem;">Una piattaforma web ottimizzata per l'esposizione e la vendita di abbigliamento e prodotti per l'infanzia. Design pulito, navigazione intuitiva e performance elevate.</p>
+                    <a href="https://m-anas-alam-tech.github.io/rongdhonu-fashion-site/" target="_blank" class="btn btn-primary btn-sm">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Visita il Sito
+                    </a>
                 </div>
             </div>
 
-            <!-- Progetto 2 (Placeholder per futuri lavori dell'utente) -->
+            <!-- Progetto 2 -->
             <div class="project-card">
                 <div class="project-info">
                     <span class="project-tag">Web Design</span>
                     <h3>Il tuo business qui?</h3>
-                    <p>Questo spazio è riservato al prossimo progetto. Contattami per avviare lo sviluppo del sito ideale per la tua attività o brand personale.</p>
+                    <p>Questo spazio è riservato al prossimo progetto. Contattami per avviare lo sviluppo del sito ideale per la tua attività sul dominio gratuito.</p>
                 </div>
             </div>
 
@@ -407,7 +449,7 @@
     <section id="contatti">
         <h2 class="section-title">Parliamo del tuo progetto</h2>
         <div class="contact-card">
-            <h3>Vuoi un sito web gratuito?</h3>
+            <h3>Vuoi il tuo spazio su m-anas-alam-tech.github.io?</h3>
             <p style="color: var(--text-muted); margin-top: 0.5rem;">Segui le istruzioni qui sotto per metterti in contatto con me.</p>
             
             <div class="alert-message">
@@ -433,7 +475,8 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 m._anas_alam. Creato con passione.</p>
+        <div class="copyright">© Mohammad Anas Alam - 2026 edition</div>
+        <div class="design-by">Design by <span>Mohammad Anas Alam</span></div>
     </footer>
 
 </body>
