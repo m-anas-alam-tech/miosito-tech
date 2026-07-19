@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Anas Alam | Web Developer</title>
+    <!-- Font Inter per un look moderno e tech -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome per le icone social -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0B0F19;
+            --card-bg: #1E293B;
+            --accent-color: #38BDF8;
+            --accent-gradient: linear-gradient(135deg, #38BDF8 0%, #8B5CF6 100%);
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --nav-bg: rgba(11, 15, 25, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Sezioni Generali */
+        section {
+            padding: 8rem 2rem 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 4px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 4rem;
+        }
+
+        .hero-badge {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 99px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            animation: fadeIn 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: var(--bg-color);
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(56, 189, 248, 0.4);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Chi Sono */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .about-text strong {
+            color: var(--text-main);
+        }
+
+        .highlight-box {
+            background: rgba(139, 92, 246, 0.05);
+            border-left: 4px solid #8B5CF6;
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1.5rem;
+        }
+
+        /* Progetti */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+
+        .project-info {
+            padding: 2rem;
+        }
+
+        .project-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .project-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-info p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Contatti & Social */
+        .contact-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.7) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .alert-message {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            color: #FCA5A5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s, color 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .social-icon:hover {
+            background: var(--text-main);
+            color: var(--bg-color);
+            transform: translateY(-3px);
+        }
+
+        .social-icon.instagram-btn:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 4rem;
+        }
+
+        /* Animazioni & Responsive */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .nav-links { display: none; } /* Semplificato per spazio */
+            .contact-card { padding: 2rem 1.5rem; }
+            .cta-buttons { flex-direction: column; width: 100%; }
+            .btn { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="logo">m._anas_alam</a>
+            <ul class="nav-links">
+                <li><a href="#chi-sono">Chi Sono</a></li>
+                <li><a href="#progetti">Progetti</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-badge">Siti Web Gratis & Spazio Tech</div>
+        <h1>Ciao, sono <br><span>Mohammad Anas Alam</span></h1>
+        <p>Un ragazzo italiano appassionato di sviluppo, programmazione e tecnologia. Creo siti web moderni, veloci e su misura, completamente gratis.</p>
+        <div class="cta-buttons">
+            <a href="#contatti" class="btn btn-primary">Richiedi un Sito Gratis</a>
+            <a href="#progetti" class="btn btn-secondary">Guarda i Lavori</a>
+        </div>
+    </section>
+
+    <!-- CHI SONO SECTION -->
+    <section id="chi-sono">
+        <h2 class="section-title">Chi Sono</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Sono uno sviluppatore e appassionato tech con base in Italia. La tecnologia per me non è solo codice, ma uno strumento per dare forma alle idee delle persone e delle attività locali.</p>
+                
+                <div class="highlight-box">
+                    <strong>Perché lo faccio gratis?</strong><br>
+                    Sto espandendo attivamente il mio portfolio e affinando le mie competenze. Questo significa che puoi ottenere un sito web professionale, curato e al passo con i tempi senza spendere un centesimo per lo sviluppo.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGETTI SECTION -->
+    <section id="progetti">
+        <h2 class="section-title">Progetti Recenti</h2>
+        <div class="projects-grid">
+            
+            <!-- Progetto 1 -->
+            <div class="project-card">
+                <div class="project-info">
+                    <span class="project-tag">E-Commerce / Retail</span>
+                    <h3>RONGDHONU FASHION & BABY SHOP</h3>
+                    <p>Una piattaforma web ottimizzata per l'esposizione e la vendita di abbigliamento e prodotti per l'infanzia. Design pulito, navigazione intuitiva e performance elevate.</p>
+                </div>
+            </div>
+
+            <!-- Progetto 2 (Placeholder per futuri lavori dell'utente) -->
+            <div class="project-card">
+                <div class="project-info">
+                    <span class="project-tag">Web Design</span>
+                    <h3>Il tuo business qui?</h3>
+                    <p>Questo spazio è riservato al prossimo progetto. Contattami per avviare lo sviluppo del sito ideale per la tua attività o brand personale.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTATTI SECTION -->
+    <section id="contatti">
+        <h2 class="section-title">Parliamo del tuo progetto</h2>
+        <div class="contact-card">
+            <h3>Vuoi un sito web gratuito?</h3>
+            <p style="color: var(--text-muted); margin-top: 0.5rem;">Segui le istruzioni qui sotto per metterti in contatto con me.</p>
+            
+            <div class="alert-message">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span>Importante: Scrivimi esclusivamente su Instagram in un UNICO messaggio chiaro.</span>
+            </div>
+
+            <p style="margin-bottom: 2rem;">Spiegami brevemente chi sei, che tipo di attività hai e cosa vorresti includere nel tuo nuovo sito.</p>
+
+            <div class="social-links">
+                <a href="https://www.instagram.com/m._anas_alam/" target="_blank" class="social-icon instagram-btn" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@m._anas_alam" target="_blank" class="social-icon" title="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://github.com/m-anas-alam-tech" target="_blank" class="social-icon" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 m._anas_alam. Creato con passione.</p>
+    </footer>
+
+</body>
+</html>
